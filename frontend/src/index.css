@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+/* Enable dark mode using the .dark class */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Global Styles */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Inter, system-ui, sans-serif;
+    background-color: #020617;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Selection */
+
+::selection {
+    background: #2563eb;
+    color: white;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2563eb;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6;
+}
+
+/* Links */
+
+a {
+    text-decoration: none;
+}
+
+/* Buttons */
+
+button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Images */
+
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Glass Effect */
+
+.glass {
+
+    background: rgba(30,41,59,0.55);
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+}
+
+/* Card Hover */
+
+.card-hover {
+
+    transition: all .3s ease;
+
+}
+
+.card-hover:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 20px 40px rgba(0,0,0,.35);
+
+}
+
+/* Gradient Text */
+
+.gradient-text {
+
+    background: linear-gradient(
+        90deg,
+        #3b82f6,
+        #22c55e
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+
+}
+
+/* Animated Background */
+
+.hero-bg {
+
+    background: linear-gradient(
+        135deg,
+        #020617,
+        #0f172a,
+        #1e293b
+    );
+
+}
+
+/* Fade Animation */
+
+.fade-in {
+
+    animation: fadeIn .6s ease;
+
+}
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+/* Floating Animation */
+
+.float {
+
+    animation: floating 3s ease-in-out infinite;
+
+}
+
+@keyframes floating {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-8px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+/* Glow */
+
+.glow {
+
+    box-shadow:
+
+    0 0 15px rgba(59,130,246,.4),
+
+    0 0 30px rgba(59,130,246,.25);
+
+}
+
+/* Dark Mode */
+
+.dark body {
+
+    background: #020617;
+
+    color: white;
+
+}
+
+.dark .glass {
+
+    background: rgba(15,23,42,.7);
+
+}
+
+/* Light Mode (optional) */
+
+body:not(.dark) {
+
+    background: #f8fafc;
+
+    color: #0f172a;
+
+}
